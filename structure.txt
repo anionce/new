@@ -2,3 +2,8 @@ ordenar
 filtrar per genere
 favorito
 login/register
+
+$dark-color: #5d5f71;
+$main-color: #bf8b85;
+$secondary-color: #dabeca;
+$light-color: #e3d8f1;
