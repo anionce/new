@@ -1,0 +1,32 @@
+.poster {
+	position: relative;
+
+	&-img {
+		border-radius: 10px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		margin-bottom: 15px;
+	}
+
+	&-like {
+		position: absolute;
+		bottom: 30px;
+		right: 10px;
+		border-radius: 5px;
+		z-index: 50;
+		color: white;
+		background-color: transparent;
+		border: none;
+	}
+}
+
+.poster-like:hover {
+	color: #bf8b85;
+	cursor: pointer;
+}
+
+@media (max-width: 560px) {
+	.poster-img {
+		width: 100%;
+		height: auto;
+	}
+}

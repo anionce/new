@@ -1,0 +1,23 @@
+.grid-container {
+	margin: 0;
+	padding: 0;
+
+	h2 {
+		text-align: left;
+	}
+
+	.MoviesGrid {
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 200px);
+		gap: 40px;
+		padding: 10px 0 10px 0;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 560px) {
+	.MoviesGrid {
+		grid-template-columns: 100%;
+	}
+}

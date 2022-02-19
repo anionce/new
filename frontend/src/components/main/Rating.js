@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
+import './Rating.scss';
 
 export default function Rating({ rating }) {
 	// return <span className='Rating'>{rating}</span>;
-	const star = <FontAwesomeIcon icon={faStar} />;
-	const halfStar = <FontAwesomeIcon icon={faStarHalf} />;
+	const star = <FontAwesomeIcon className='star' icon={faStar} />;
+	const halfStar = <FontAwesomeIcon className='star' icon={faStarHalf} />;
 
 	function setRating() {
 		if (rating === 10) return [star, star, star, star, star];

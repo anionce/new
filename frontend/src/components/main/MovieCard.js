@@ -3,7 +3,7 @@ import Poster from './Poster';
 import Title from './Title';
 import Rating from './Rating';
 import Genre from './Genre';
-import './MovieCard.css';
+import './MovieCard.scss';
 
 export default function MovieCard() {
 	return movies.map(function (movie) {

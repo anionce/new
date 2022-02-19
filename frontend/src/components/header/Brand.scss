@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.brand {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	gap: 20px;
+
+	&-title {
+		font-size: 55px;
+		font-family: 'Lobster', cursive;
+	}
+
+	&-logo {
+		height: 30px;
+	}
+}

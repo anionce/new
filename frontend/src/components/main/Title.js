@@ -1,5 +1,5 @@
-import './Title.css';
+import './Title.scss';
 
 export default function Title({ title }) {
-	return <h2 className='MovieTitle'>{title}</h2>;
+	return <span className='movie-title'>{title}</span>;
 }

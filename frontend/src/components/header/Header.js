@@ -1,11 +1,11 @@
-import Title from './Title';
+import Brand from './Brand';
 import Navigation from './Navigation';
-import './Header.css';
+import './Header.scss';
 
 export default function Header() {
 	return (
 		<div className='Header'>
-			<Title></Title>
+			<Brand></Brand>
 			<Navigation></Navigation>
 		</div>
 	);
