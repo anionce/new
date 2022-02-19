@@ -1,0 +1,4 @@
+ordenar
+filtrar per genere
+favorito
+login/register
