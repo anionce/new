@@ -1,3 +1,4 @@
+
 .poster {
 	position: relative;
 
@@ -10,17 +11,15 @@
 	&-like {
 		position: absolute;
 		bottom: 30px;
-		right: 10px;
-		border-radius: 5px;
+		right: 20px;
 		z-index: 50;
-		color: white;
-		background-color: transparent;
+		color: red;
 		border: none;
 	}
 }
 
 .poster-like:hover {
-	color: #bf8b85;
+	color: #dabeca;
 	cursor: pointer;
 }
 

@@ -1,13 +1,15 @@
 import './Recommended.scss';
+import soho from '../../assets/soho.jpg';
 
 export default function Recommended() {
 	return (
 		<div className='recommended'>
 			<h2>Recommended to you</h2>
-			<img
-				className='recommended-img'
-				src='https://www.binaural.es/wp-content/uploads/2021/11/licorice1.jpg'
-				alt='recommended movie'></img>
+			<div className='recommended-container'>
+				<a href='/'>
+					<img className='recommended-img' src={soho} alt='recommended movie'></img>
+				</a>
+			</div>
 		</div>
 	);
 }
