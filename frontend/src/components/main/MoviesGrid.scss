@@ -2,17 +2,23 @@
 	margin: 0;
 	padding: 0;
 
-	h2 {
-		text-align: left;
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
-	.MoviesGrid {
+	.grid-movies {
 		margin: 0;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, 200px);
 		gap: 40px;
 		padding: 10px 0 10px 0;
 		justify-content: center;
+	}
+
+	.sort-icon {
+		margin-left: 5px;
 	}
 }
 

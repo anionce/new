@@ -1,6 +1,4 @@
 .nav {
-
-	
 	display: flex;
 	list-style-type: none;
 	align-items: center;
@@ -8,5 +6,9 @@
 
 	&-item {
 		cursor: pointer;
+
+		&-icon {
+			margin-right: 10px;
+		}
 	}
 }

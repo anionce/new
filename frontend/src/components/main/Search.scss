@@ -1,0 +1,33 @@
+.search-div {
+	h2 {
+		margin-bottom: 7px;
+	}
+	input {
+		font-family: Poppins;
+		font-weight: 100;
+		font-size: 15px;
+		padding-left: 10px;
+		border-radius: 10px;
+		border: none;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		width: 200px;
+		height: 35px;
+		-webkit-transition: width 0.4s ease-in-out;
+		transition: width 0.4s ease-in-out;
+
+		&::placeholder {
+			font-family: Poppins;
+			font-weight: 100;
+			font-size: 15px;
+		}
+
+		&:focus {
+			outline: none;
+			width: 40%;
+		}
+	}
+}
+
+.fontAwesome {
+	font-family: 'Helvetica', FontAwesome, sans-serif;
+}

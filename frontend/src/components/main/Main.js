@@ -1,10 +1,11 @@
 import MoviesGrid from './MoviesGrid';
 import Recommended from './Recommended';
+import Search from './Search';
 
 export default function Main() {
 	return (
 		<>
-			<Recommended></Recommended>
+			<Search></Search>
 			<MoviesGrid></MoviesGrid>
 		</>
 	);
