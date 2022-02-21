@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
-import './Login.scss';
+import './form.scss';
 
 export default function Login() {
-	const [input, setInput] = useState('');
+	const [inputEmail, setInputEmail] = useState('');
+	const [inputPassword, setInputPassword] = useState('');
 
 	const handleInputChange = e => {
-		setInput(e.target.value);
+		if (e.target.name === 'email__input') {
+			setInputEmail(e.target.value);
+		} else {
+			setInputPassword(e.target.value);
+		}
 	};
 
 	return (
-		<div class='login'>
-			<div class='form'>
-				<form class='login__form'>
+		<div class='container'>
+			<div class='container__form'>
+				<form class='form'>
 					<input
 						type='email'
 						placeholder='email'
-						className='email__input'
+						className='form__input'
 						name='email__input'
-						value={input}
+						value={inputEmail}
 						onChange={handleInputChange}
 					/>
 					<input
@@ -25,7 +30,7 @@ export default function Login() {
 						placeholder='password'
 						name='password__input'
 						className='password__input'
-						value={input}
+						value={inputPassword}
 						onChange={handleInputChange}
 					/>
 					<button>login</button>

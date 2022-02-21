@@ -1,4 +1,4 @@
-@import '../../App.scss';
+@import '../../index.scss';
 
 .poster {
 	position: relative;
@@ -12,12 +12,12 @@
 		bottom: 25px;
 		right: 10px;
 		z-index: 1;
-		//color: var($main-color);
-		color: #f94144;
+		color: var(--main-color);
 		border: none;
 
 		&:hover {
-			color: #f8888a;
+			cursor: pointer;
+			color: var(--secondary-color);
 		}
 	}
 }

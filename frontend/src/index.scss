@@ -8,3 +8,51 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+// FONTS
+:root {
+	$header-font: 'Lobster';
+	$main-font: 'Poppins';
+}
+
+// COLORS
+:root {
+	--main-color: #f94144;
+	--secondary-color: #f8888a;
+	--light-color: #e3d8f1;
+}
+
+img {
+	border-radius: 15px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--main-color);
+
+	&:hover {
+		color: var(--secondary-color);
+	}
+}
+
+button {
+	text-transform: uppercase;
+	outline: 0;
+	background: var(--main-color);
+	width: 100%;
+	border: 1px var(--main-color) solid;
+	padding: 15px;
+	color: white;
+	cursor: pointer;
+
+	&:hover {
+		color: var(--main-color);
+		background-color: white;
+		transition: background-color 0.4s ease;
+	}
+}

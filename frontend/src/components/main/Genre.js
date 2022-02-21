@@ -1,3 +1,5 @@
+import './Genre.scss';
+
 export default function Genre({ genre }) {
-	return <span className='Genre'>{genre}</span>;
+	return <span className='genre'>{genre}</span>;
 }
