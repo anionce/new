@@ -4,5 +4,6 @@ favorito
 login/register
 
 To check:
--sass variables
+
+-rating
 -sass compartido como form, input...
