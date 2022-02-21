@@ -1,5 +1,4 @@
 import './Navigation.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
@@ -12,14 +11,14 @@ export default function Navigation() {
 
 	return (
 		<ul className='nav'>
-			<li className='nav-item'>
-				<span className='nav-item-icon'>{signup}</span> Register
+			<li className='nav__item'>
+				<span className='nav__item__icon'>{signup}</span>Register
 			</li>
-			<li className='nav-item'>
-				<span className='nav-item-icon'>{signin}</span> Login
+			<li className='nav__item'>
+				<span className='nav__item__icon'>{signin}</span>Login
 			</li>
-			<li className='nav-item'>
-				<span className='nav-item-icon'>{heart}</span> Favorites
+			<li className='nav__item'>
+				<span className='nav__item__icon'>{heart}</span>Favorites
 			</li>
 		</ul>
 	);

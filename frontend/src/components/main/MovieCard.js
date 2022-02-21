@@ -8,8 +8,8 @@ import './MovieCard.scss';
 export default function MovieCard() {
 	return movies.map(function (movie) {
 		return (
-			<li className='MovieCard' key={movie.title}>
-				<Poster url={movie.poster}></Poster>
+			<li className='moviecard' key={movie.title}>
+				<Poster url={movie.poster} title={movie.title}></Poster>
 				<Title title={movie.title}></Title>
 				<Genre genre={movie.category}></Genre>
 				<Rating rating={movie.rating}></Rating>

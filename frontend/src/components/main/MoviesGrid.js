@@ -7,14 +7,14 @@ export default function MoviesGrid() {
 	const sort = <FontAwesomeIcon icon={faArrowDownAZ} />;
 
 	return (
-		<div className='grid-container'>
-			<div className='grid-container-header'>
-				<h2>All Movies</h2>
+		<div className='grid'>
+			<div className='grid__header'>
+				<h2 className='grid__header__title'>All Movies</h2>
 				<h4>
-					Sort <span className='sort-icon'> {sort}</span>
+					Sort <span className='grid__header__sort'> {sort}</span>
 				</h4>
 			</div>
-			<ul className='grid-movies'>
+			<ul className='grid__movies'>
 				<MovieCard></MovieCard>
 			</ul>
 		</div>

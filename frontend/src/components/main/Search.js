@@ -2,7 +2,6 @@ import './Search.scss';
 import React, { useState } from 'react';
 
 export default function Search() {
-	
 	const [input, setInput] = useState('');
 
 	const handleInputChange = e => {
@@ -10,14 +9,14 @@ export default function Search() {
 	};
 
 	return (
-		<div className='search-div'>
+		<div className='search'>
 			<input
 				type='text'
 				onChange={handleInputChange}
-				class='fontAwesome'
+				className='search__input'
 				name='searchInput'
 				value={input}
-				placeholder='Search...'></input>
+				placeholder='search...'></input>
 		</div>
 	);
 }

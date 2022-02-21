@@ -3,11 +3,10 @@ import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import './Rating.scss';
 
 export default function Rating({ rating }) {
-	// return <span className='Rating'>{rating}</span>;
 	const star = <FontAwesomeIcon className='star' icon={faStar} />;
-	const halfStar = <FontAwesomeIcon className='star' icon={faStarHalf} />;
+	const halfStar = <FontAwesomeIcon className='star--half' icon={faStarHalf} />;
 
-	function setRating() {
+	const setRating = () => {
 		if (rating === 10) return [star, star, star, star, star];
 		if (rating > 9) return [star, star, star, star, halfStar];
 		if (rating > 8) return [star, star, star, star];
@@ -18,7 +17,7 @@ export default function Rating({ rating }) {
 		if (rating > 3) return [star, halfStar];
 		if (rating > 2) return [star];
 		if (rating > 1) return [halfStar];
-	}
+	};
 
-	return <span className='Rating'>{setRating()} </span>;
+	return <span className='rating'>{setRating()} </span>;
 }

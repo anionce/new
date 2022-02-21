@@ -1,29 +1,29 @@
-.grid-container {
-	margin: 0;
+.grid {
+	margin: 0 5rem 0 5rem;
 	padding: 0;
 
-	&-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.grid-movies {
+	&__movies {
 		margin: 0;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, 200px);
-		gap: 40px;
+		grid-template-columns: repeat(auto-fill, 190px);
+		gap: 30px;
 		padding: 10px 0 10px 0;
 		justify-content: center;
 	}
 
-	.sort-icon {
-		margin-left: 5px;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&__sort__icon {
+			margin-left: 5px;
+		}
 	}
 }
 
 @media (max-width: 560px) {
-	.MoviesGrid {
+	.grid__movies {
 		grid-template-columns: 100%;
 	}
 }

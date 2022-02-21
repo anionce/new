@@ -1,6 +1,8 @@
+import Search from './Search';
 import MoviesGrid from './MoviesGrid';
 import Recommended from './Recommended';
-import Search from './Search';
+import Register from '../users/Register';
+import Login from '../users/Login';
 
 export default function Main() {
 	return (
