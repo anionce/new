@@ -7,8 +7,16 @@
 	&__item {
 		cursor: pointer;
 
+		&:hover {
+			color: var(--secondary-color);
+		}
+
 		&__icon {
 			margin-right: 10px;
 		}
 	}
+}
+
+.active :not(.brand__title) {
+	color: var(--secondary-color);
 }

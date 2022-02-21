@@ -1,9 +1,0 @@
-ordenar
-filtrar per genere
-favorito
-login/register
-
-To check:
-
--rating
--sass compartido como form, input...

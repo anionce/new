@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, NavLink, Route, Routes } from 'react-router-dom';
 import Search from './Search';
 import MoviesGrid from './MoviesGrid';
 import Recommended from './Recommended';

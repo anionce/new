@@ -21,3 +21,19 @@ export default function Rating({ rating }) {
 
 	return <span className='rating'>{setRating()} </span>;
 }
+
+/* 
+
+const ratingGenerator = (rating) => {
+  const output = Array(Math.trunc(rating / 2)).fill("full");
+
+  const rest = (rating / 2) % 1 >= 0.5;
+  if (rest) {
+    output.push("half");
+  }
+
+  return output;
+};
+Web Dev Instructors18:44
+const FULL_STAR = "fas fa-star";
+const HALF_STAR = "fas fa-star-half-alt"; */
