@@ -6,6 +6,10 @@ export default function GenreCloud() {
 	const uniqueGenres = [...new Set(genres)];
 
 	return uniqueGenres.map(function (genre) {
-		return <span className='genre__tag'>{genre}</span>;
+		return (
+			<>
+				<span className='genre__tag'>{genre}</span>
+			</>
+		);
 	});
 }

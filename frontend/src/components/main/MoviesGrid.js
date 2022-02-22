@@ -1,6 +1,5 @@
 import MovieCard from './MovieCard';
 import './MoviesGrid.scss';
-import { BrowserRouter as Router, NavLink, Route, Routes } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDownAZ } from '@fortawesome/free-solid-svg-icons';
 

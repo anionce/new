@@ -14,11 +14,7 @@
 		z-index: 1;
 		color: var(--main-color);
 		border: none;
-
-		&:hover {
-			cursor: pointer;
-			color: var(--secondary-color);
-		}
+		cursor: pointer;
 	}
 }
 
@@ -27,4 +23,14 @@
 		width: 100%;
 		height: auto;
 	}
+}
+
+.unfavorited {
+	color: var(--light-color);
+	position: absolute;
+	bottom: 25px;
+	right: 10px;
+	z-index: 1;
+	border: none;
+	cursor: pointer;
 }

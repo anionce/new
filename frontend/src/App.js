@@ -3,10 +3,9 @@ import './App.scss';
 import { BrowserRouter as Router, NavLink, Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import Main from './components/main/Main';
-import Register from './components/users/Register';
-import Login from './components/users/Login';
-import MoviesGrid from './components/main/MoviesGrid';
+import Main from './pages/Main';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 function App() {
 	return (
@@ -14,14 +13,13 @@ function App() {
 			<Router>
 				<Header></Header>
 
-				<main>
-					<Routes>
-						<Route path='/' element={<Main />} />
-						<Route path='/register' element={<Register />} />
-						<Route path='/login' element={<Login />} />
-						<Route path='/favorites' element={<MoviesGrid favorites='favorites' />} />
-					</Routes>
-				</main>
+				<Routes>
+					<Route path='/' element={<Main />} />
+					<Route path='/register' element={<Register />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/favorites' element={<Main />} />
+				</Routes>
+
 				<Footer></Footer>
 			</Router>
 		</div>
