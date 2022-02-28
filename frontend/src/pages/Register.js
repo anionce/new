@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useTheme } from '../ThemeContext';
 import './form.scss';
 
 export default function Register() {
@@ -23,8 +25,14 @@ export default function Register() {
 		}
 	};
 
+	// Theme
+	const theme = useTheme();
+	const style = {
+		backgroundColor: theme,
+	};
+
 	return (
-		<div class='container'>
+		<div style={style} class='container'>
 			<div class='container__form'>
 				<form class='form'>
 					<input
@@ -58,7 +66,7 @@ export default function Register() {
 
 					<button>create</button>
 					<p class='input__message'>
-						Already registered? <a href='#'>Login</a>
+						Already registered? <Link to='/login'> Login</Link>
 					</p>
 				</form>
 			</div>
