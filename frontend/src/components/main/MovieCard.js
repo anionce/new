@@ -1,4 +1,4 @@
-import movies from '../../movies.json';
+import movies from '../../movies2.json';
 import Poster from './Poster';
 import Title from './Title';
 import Rating from './Rating';
