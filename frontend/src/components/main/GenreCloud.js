@@ -1,4 +1,4 @@
-import movies from '../../movies.json';
+import movies from '../../movies2.json';
 import './Genre.scss';
 
 export default function GenreCloud() {
