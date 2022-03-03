@@ -29,7 +29,14 @@ function App() {
 							<Route path='/' element={<Main />} />
 							<Route path='/register' element={<Register />} />
 							<Route path='/login' element={<Login />} />
-							<Route path='/favorites' element={<Favorites />} />
+							<Route
+								path='/favorites'
+								element={
+									<RequiredAuth>
+										<Favorites />
+									</RequiredAuth>
+								}
+							/>
 						</Routes>
 
 						<Footer></Footer>
@@ -41,16 +48,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
-// Per aplicar a la ruta de Favorites
-
-<Route
-								path='/favorites'
-								element={
-									<RequiredAuth>
-										<Favorites />
-									</RequiredAuth>
-								}
-							/> */

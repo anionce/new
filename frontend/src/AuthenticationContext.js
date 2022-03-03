@@ -10,7 +10,7 @@ const AuthenticationProvider = ({ children }) => {
 	};
 
 	const logout = () => {
-		setAuthData({});
+		setAuthData('');
 	};
 
 	const value = {

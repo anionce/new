@@ -16,10 +16,9 @@ export default function Login() {
 	const from = location.state?.from?.pathname || '/';
 
 	// Input Handlers
-	const handleUsernameChange = event => {
+	const handleEmailChange = event => {
 		setEmail(event.target.value);
 	};
-
 	const handlePasswordChange = event => {
 		setPassword(event.target.value);
 	};
@@ -48,7 +47,7 @@ export default function Login() {
 						className='email__input'
 						name='email__input'
 						value={email}
-						onChange={handleUsernameChange}
+						onChange={handleEmailChange}
 					/>
 					<input
 						type='password'
