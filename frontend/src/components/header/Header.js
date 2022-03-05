@@ -5,8 +5,8 @@ import './Header.scss';
 import { useTheme } from '../../ThemeContext';
 
 export default function Header({ handleColorChange, selectedColor }) {
+	// Theme
 	const theme = useTheme();
-
 	const style = {
 		backgroundColor: theme,
 	};

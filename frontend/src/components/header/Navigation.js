@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../ThemeContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navigation() {
 	// Icons
@@ -16,8 +16,9 @@ export default function Navigation() {
 	const logoutI = <FontAwesomeIcon className='signin' icon={faArrowRightFromBracket} />;
 	const heart = <FontAwesomeIcon className='signin' icon={faHeart} />;
 
-	// Authentication
+	// Hooks
 	const { authData, logout } = useAuthentication();
+	const navigate = useNavigate();
 
 	// Theme
 	const theme = useTheme();
@@ -28,9 +29,12 @@ export default function Navigation() {
 		color: theme === 'white' ? 'black' : '#f8888a',
 	};
 
-	const handleLogoutClick = () => {
+	// Handlers
+
+	function handleLogoutClick() {
 		logout();
-	};
+		navigate('/', { replace: true });
+	}
 
 	return (
 		<ul className='nav'>

@@ -34,6 +34,10 @@ li {
 a {
 	text-decoration: none;
 	color: black;
+
+	&:hover {
+		color: var(--main-color);
+	}
 }
 
 button {

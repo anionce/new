@@ -3,13 +3,14 @@ import { useTheme } from '../../ThemeContext';
 import './ThemeSelector.scss';
 
 const ThemeSelector = ({ onChange, value }) => {
+	// Theme
 	const theme = useTheme();
-
 	const style = {
 		color: theme === 'white' ? 'black' : 'white',
 		backgroundColor: theme,
 	};
 
+	// Handlers
 	const handleChange = event => {
 		onChange(event.target.value);
 	};

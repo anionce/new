@@ -1,8 +1,10 @@
+@import '../../index.scss';
+
 .star,
 .star--half {
-	color: #f94144;
+	color: var(--main-color);
 
 	&:hover {
-		color: #f8888a;
+		color: var(--secondary-color);
 	}
 }

@@ -5,18 +5,19 @@ import { faArrowDownAZ } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../ThemeContext';
 import { useLocation } from 'react-router-dom';
 
-export default function MoviesGrid({ favorites, movies }) {
-	// Location
+export default function MoviesGrid({ favorites, movies, handleSortClick }) {
+	// Hooks
 	const location = useLocation();
-
-	// Icon
-	const sort = <FontAwesomeIcon icon={faArrowDownAZ} />;
 
 	// Theme
 	const theme = useTheme();
 	const style = {
 		color: theme === 'white' ? 'black' : 'white',
 	};
+
+	// Icon
+	const sort = <FontAwesomeIcon icon={faArrowDownAZ} />;
+
 	return (
 		<div className='grid'>
 			<div className='grid__header'>
@@ -24,6 +25,7 @@ export default function MoviesGrid({ favorites, movies }) {
 					{location.pathname === '/favorites' ? 'My Favorites' : 'All Movies'}
 				</h2>
 				<h4
+					onClick={handleSortClick}
 					style={style}
 					className={
 						location.pathname === '/favorites' ? 'hidden' : 'grid__header__sort '
@@ -33,7 +35,9 @@ export default function MoviesGrid({ favorites, movies }) {
 				</h4>
 			</div>
 			<ul className='grid__movies'>
-				<MovieCard  movies={movies}></MovieCard>
+				{movies.map(function (movie) {
+					return <MovieCard key={movie.title} movie={movie}></MovieCard>;
+				})}
 			</ul>
 		</div>
 	);

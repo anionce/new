@@ -22,6 +22,7 @@ exports.login = (req, res, next) => {
 	})(req, res, next);
 };
 
+//@access public
 exports.logout = (req, res, next) => {
 	req.logout();
 	res.clearCookie('SID', { path: '/' });

@@ -16,8 +16,12 @@
 		justify-content: space-between;
 		align-items: center;
 
-		&__sort__icon {
-			margin-left: 5px;
+		&__sort {
+			cursor: pointer;
+
+			&__sort__icon {
+				margin-left: 5px;
+			}
 		}
 	}
 }

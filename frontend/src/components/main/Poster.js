@@ -8,36 +8,34 @@ import { useTheme } from '../../ThemeContext';
 import { useLocation } from 'react-router-dom';
 
 export default function Poster({ url, title, handleFav }) {
-	// State
-	const [isFavorite, setFavorite] = useState(false);
-
-	// Icon
-	const heart = <FontAwesomeIcon className='poster-like' icon={faHeart} size='lg' />;
-
 	// Hooks
 	const { authData } = useAuthentication();
 	const navigate = useNavigate();
-
-	// Location
 	const location = useLocation();
+
+	// State
+	const [isFavorite, setFavorite] = useState(false);
+
+	// Theme
+	const theme = useTheme();
+	const style = {
+		borderColor: `1px solid ${theme === 'black' ? 'white' : ''}`,
+	};
+
+	// Icon
+	const heart = <FontAwesomeIcon className='poster-like' icon={faHeart} size='lg' />;
 
 	// Favorite logic
 	const handleHeartClick = () => {
 		if (!authData) {
 			navigate('/login', { replace: true });
-		} else {
+
 			if (!isFavorite) {
 				setFavorite(true);
 			} else {
 				setFavorite(false);
 			}
 		}
-	};
-
-	// Theme
-	const theme = useTheme();
-	const style = {
-		borderColor: `1px solid ${theme === 'black' ? 'white' : ''}`,
 	};
 
 	return (

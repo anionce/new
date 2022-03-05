@@ -3,9 +3,9 @@ import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import './Rating.scss';
 
 export default function Rating({ rating }) {
+	// Logic Rating
 	const star = <FontAwesomeIcon className='star' icon={faStar} />;
 	const halfStar = <FontAwesomeIcon className='star--half' icon={faStarHalf} />;
-
 	const setRating = () => {
 		if (rating === 10) return [star, star, star, star, star];
 		if (rating > 9) return [star, star, star, star, halfStar];
@@ -19,7 +19,7 @@ export default function Rating({ rating }) {
 		if (rating > 1) return [halfStar];
 	};
 
-	return <span className='rating'>{setRating()} </span>;
+	return <span className='rating'>{setRating()}</span>;
 }
 
 /* 
@@ -34,6 +34,6 @@ const ratingGenerator = (rating) => {
 
   return output;
 };
-Web Dev Instructors18:44
+
 const FULL_STAR = "fas fa-star";
 const HALF_STAR = "fas fa-star-half-alt"; */
