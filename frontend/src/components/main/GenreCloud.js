@@ -1,14 +1,15 @@
-import movies from '../../movies2.json';
 import './Genre.scss';
 
-export default function GenreCloud() {
+export default function GenreCloud({ handleGenreClick, movies }) {
 	const genres = movies.map(movie => movie.category);
 	const uniqueGenres = [...new Set(genres)];
 
 	return uniqueGenres.map(function (genre) {
 		return (
 			<>
-				<span className='genre__tag'>{genre}</span>
+				<span onClick={() => handleGenreClick(genre)} className='genre__tag'>
+					{genre}
+				</span>
 			</>
 		);
 	});

@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../ThemeContext';
 import './form.scss';
+import { useNavigate } from 'react-router-dom';
+import { useAuthentication } from '../AuthenticationContext';
 
 export default function Register() {
 	const [inputEmail, setInputEmail] = useState('');
 	const [inputPassword, setInputPassword] = useState('');
 	const [inputPassword2, setInputPassword2] = useState('');
 	const [inputName, setInputName] = useState('');
+
+	const navigate = useNavigate();
+	const { login } = useAuthentication();
 
 	const handleInputChange = e => {
 		if (e.target.name === 'email__input') {
@@ -24,6 +29,29 @@ export default function Register() {
 			setInputPassword2(e.target.value);
 		}
 	};
+
+	async function register(event) {
+		event.preventDefault();
+		const data = {
+			name: inputName,
+			email: inputEmail,
+			password: inputPassword,
+		};
+
+		const response = await fetch(`http://localhost:4000/api/auth/register`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+
+			body: JSON.stringify(data),
+		});
+
+		if (response.status === 200) {
+			login({ email: data.email, name: data.name });
+			navigate('/', { replace: true });
+		}
+	}
 
 	// Theme
 	const theme = useTheme();
@@ -64,7 +92,7 @@ export default function Register() {
 						onChange={handleInputChange}
 					/>
 
-					<button>create</button>
+					<button onClick={register}>create</button>
 					<p class='input__message'>
 						Already registered? <Link to='/login'> Login</Link>
 					</p>

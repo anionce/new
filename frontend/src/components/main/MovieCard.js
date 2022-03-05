@@ -1,15 +1,10 @@
-import movies from '../../movies2.json';
 import Poster from './Poster';
 import Title from './Title';
 import Rating from './Rating';
 import Genre from './Genre';
 import './MovieCard.scss';
-import { useLocation } from 'react-router-dom';
 
-export default function MovieCard() {
-	// Location
-	const location = useLocation();
-
+export default function MovieCard({ movies }) {
 	return movies.map(function (movie) {
 		return (
 			<li className='moviecard' key={movie.title}>

@@ -1,17 +1,38 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 export const AuthenticationContext = React.createContext();
 
 const AuthenticationProvider = ({ children }) => {
-	const [authData, setAuthData] = useState('');
+	const [authData, setAuthData] = useState({});
+
+	useEffect(() => {
+		getLoggedUser();
+	}, []);
 
 	const login = data => {
-		setAuthData(data);
+		setAuthData({ data });
 	};
 
 	const logout = () => {
 		setAuthData('');
 	};
+
+	async function getLoggedUser() {
+		const response = await fetch(`http://localhost:4000/api/auth/getuser`, {
+			method: 'GET',
+			credentials: 'include',
+			headers: {
+				Accept: 'application/json',
+			},
+		});
+
+		try {
+			const data = await response.json();
+			login(data);
+		} catch {
+			return null;
+		}
+	}
 
 	const value = {
 		authData,

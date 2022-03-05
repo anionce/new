@@ -16,20 +16,41 @@ export default function Login() {
 	const from = location.state?.from?.pathname || '/';
 
 	// Input Handlers
-	const handleEmailChange = event => {
-		setEmail(event.target.value);
-	};
-	const handlePasswordChange = event => {
-		setPassword(event.target.value);
+	const handleInputChange = e => {
+		if (e.target.name === 'email__input') {
+			setEmail(e.target.value);
+		}
+
+		if (e.target.name === 'password__input') {
+			setPassword(e.target.value);
+		}
 	};
 
 	// Click Handler
-	const handleLoginClick = () => {
-		if (email && password) {
-			login(email);
+	async function handleLoginClick(event) {
+		event.preventDefault();
+
+		const data = {
+			email: email,
+			password: password,
+		};
+
+		const response = await fetch(`http://localhost:4000/api/auth/login`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+
+			body: JSON.stringify(data),
+		});
+
+		console.log(response);
+
+		if (response.status === 200) {
+			login({ email: data.email });
 			navigate(from, { replace: true });
 		}
-	};
+	}
 
 	// Theme
 	const theme = useTheme();
@@ -47,7 +68,7 @@ export default function Login() {
 						className='email__input'
 						name='email__input'
 						value={email}
-						onChange={handleEmailChange}
+						onChange={handleInputChange}
 					/>
 					<input
 						type='password'
@@ -55,7 +76,7 @@ export default function Login() {
 						name='password__input'
 						className='password__input'
 						value={password}
-						onChange={handlePasswordChange}
+						onChange={handleInputChange}
 					/>
 
 					<button onClick={handleLoginClick}>login</button>
