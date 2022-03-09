@@ -5,7 +5,7 @@ import { faArrowDownAZ } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../ThemeContext';
 import { useLocation } from 'react-router-dom';
 
-export default function MoviesGrid({ favorites, movies, handleSortClick }) {
+export default function MoviesGrid({ movies, addToFavoriteMovies, isLoading, handleSortClick }) {
 	// Hooks
 	const location = useLocation();
 
@@ -34,11 +34,16 @@ export default function MoviesGrid({ favorites, movies, handleSortClick }) {
 					<span> {sort}</span>
 				</h4>
 			</div>
-			<ul className='grid__movies'>
-				{movies.map(function (movie) {
-					return <MovieCard key={movie.title} movie={movie}></MovieCard>;
-				})}
-			</ul>
+			{movies && (
+				<ul className={isLoading ? 'loader' : 'grid__movies'}>
+					{movies.map(movie => (
+						<MovieCard
+							key={movie.title}
+							addToFavoriteMovies={addToFavoriteMovies}
+							movie={movie}></MovieCard>
+					))}
+				</ul>
+			)}
 		</div>
 	);
 }

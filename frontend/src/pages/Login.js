@@ -35,7 +35,7 @@ export default function Login() {
 			password: password,
 		};
 
-		const response = await fetch(`http://localhost:4000/api/auth/login`, {
+		const response = await fetch(`/api/auth/login`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -43,8 +43,6 @@ export default function Login() {
 
 			body: JSON.stringify(data),
 		});
-
-		console.log(response);
 
 		if (response.status === 200) {
 			login({ email: data.email });
@@ -59,9 +57,9 @@ export default function Login() {
 	};
 
 	return (
-		<div style={style} class='container'>
+		<div style={style} className='container'>
 			<div class='container__form'>
-				<form class='form'>
+				<form className='form'>
 					<input
 						type='email'
 						placeholder='email'
@@ -80,7 +78,7 @@ export default function Login() {
 					/>
 
 					<button onClick={handleLoginClick}>login</button>
-					<p class='input__message'>
+					<p className='input__message'>
 						Not registered?
 						<Link to='/register'> Register</Link>
 					</p>

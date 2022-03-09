@@ -6,7 +6,7 @@ export default function Search({ handleInputChange, handleSubmitSearch }) {
 			<input
 				type='text'
 				onChange={handleInputChange}
-				onKeyDown={handleSubmitSearch}
+				onKeyUp={handleSubmitSearch}
 				className='search__input'
 				name='searchInput'
 				placeholder='search...'></input>
