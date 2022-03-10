@@ -63,11 +63,11 @@ export default function Main() {
 
 	const handleSortClick = () => {
 		const sortedMovies = [...movies];
+
 		setFilterMovies(sortedMovies.sort((a, b) => (a.title > b.title ? 1 : -1)));
 	};
 
 	function addToFavoriteMovies(id) {
-		console.log(id);
 		if (!authData) {
 			navigate('/login', { replace: true });
 		}

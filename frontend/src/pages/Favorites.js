@@ -24,7 +24,6 @@ export default function Favorites() {
 		});
 		const data = await response.json();
 		const favorites = data.favorites;
-		console.log(data.favorites);
 		setFavoriteMovies(favorites);
 		setLoading(false);
 	}

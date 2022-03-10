@@ -3,10 +3,16 @@ import Title from './Title';
 import Rating from './Rating';
 import Genre from './Genre';
 import './MovieCard.scss';
+import { useLocation } from 'react-router-dom';
 
 export default function MovieCard({ addToFavoriteMovies, movie }) {
+	// Hooks
+	const location = useLocation();
+
 	return (
-		<li className='moviecard' key={movie.title}>
+		<li
+			className='moviecard'
+			key={location.pathname === `/favorites` ? `favorite-${movie.title}` : `${movie.title}`}>
 			<Poster
 				id={movie._id}
 				url={movie.poster}
