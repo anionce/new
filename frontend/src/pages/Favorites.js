@@ -1,6 +1,7 @@
 import MoviesGrid from '../components/main/MoviesGrid';
 import { useTheme } from '../ThemeContext';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function Favorites() {
 	const theme = useTheme();
@@ -8,13 +9,15 @@ export default function Favorites() {
 		backgroundColor: theme,
 	};
 
+	// Hooks
+	const location = useLocation();
+
 	// State
 	const [favoriteMovies, setFavoriteMovies] = useState([]); // Initial fetch
 	const [isLoading, setLoading] = useState(true);
 
 	// Fetching movies
 	async function getUserFavorites() {
-		setLoading(true);
 		const response = await fetch('/api/user/favorites', {
 			method: 'GET',
 			credentials: 'include',
@@ -28,13 +31,29 @@ export default function Favorites() {
 		setLoading(false);
 	}
 
+	function deleteFromFavorites(id) {
+		console.log(id);
+		fetch(`/api/user/favorites/${id}`, {
+			method: 'DELETE',
+			credentials: 'include',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+		setLoading(false);
+		getUserFavorites();
+	}
+
 	useEffect(() => {
 		getUserFavorites();
 	}, []);
 
 	return (
 		<div style={style}>
-			<MoviesGrid isLoading={isLoading} movies={favoriteMovies}></MoviesGrid>
+			<MoviesGrid
+				isLoading={isLoading}
+				movies={favoriteMovies}
+				deleteFromFavorites={deleteFromFavorites}></MoviesGrid>
 		</div>
 	);
 }

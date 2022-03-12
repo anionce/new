@@ -5,7 +5,7 @@ import Genre from './Genre';
 import './MovieCard.scss';
 import { useLocation } from 'react-router-dom';
 
-export default function MovieCard({ addToFavoriteMovies, movie }) {
+export default function MovieCard({ addToFavoriteMovies, deleteFromFavorites, isActive, movie }) {
 	// Hooks
 	const location = useLocation();
 
@@ -17,6 +17,8 @@ export default function MovieCard({ addToFavoriteMovies, movie }) {
 				id={movie._id}
 				url={movie.poster}
 				addToFavoriteMovies={addToFavoriteMovies}
+				deleteFromFavorites={deleteFromFavorites}
+				isActive={isActive}
 				title={movie.title}></Poster>
 			<Title title={movie.title}></Title>
 			<Genre genre={movie.category}></Genre>

@@ -63,7 +63,6 @@ export default function Main() {
 
 	const handleSortClick = () => {
 		const sortedMovies = [...movies];
-
 		setFilterMovies(sortedMovies.sort((a, b) => (a.title > b.title ? 1 : -1)));
 	};
 

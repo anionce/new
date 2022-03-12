@@ -20,19 +20,13 @@
 	}
 }
 
+.hidden {
+	display: none;
+}
+
 @media (max-width: 560px) {
 	.poster__img {
 		width: 100%;
 		height: auto;
 	}
-}
-
-.unfavorited {
-	color: white;
-	position: absolute;
-	bottom: 25px;
-	right: 10px;
-	z-index: 1;
-	border: none;
-	cursor: pointer;
 }
