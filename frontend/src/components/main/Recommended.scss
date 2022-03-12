@@ -7,8 +7,16 @@
 	gap: 10px;
 	text-align: left;
 
+	&__div {
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 210px);
+		gap: 20px;
+		padding: 10px 0 10px 0;
+	}
+
 	&__img {
-		width: 350px;
+		width: 200px;
 		height: auto;
 	}
 }
