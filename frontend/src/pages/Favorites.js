@@ -1,16 +1,12 @@
 import MoviesGrid from '../components/main/MoviesGrid';
 import { useTheme } from '../ThemeContext';
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 export default function Favorites() {
 	const theme = useTheme();
 	const style = {
 		backgroundColor: theme,
 	};
-
-	// Hooks
-	const location = useLocation();
 
 	// State
 	const [favoriteMovies, setFavoriteMovies] = useState([]); // Initial fetch
