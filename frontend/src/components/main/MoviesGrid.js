@@ -50,6 +50,7 @@ export default function MoviesGrid({
 					</span>
 				</h4>
 			</div>
+			{movies.length === 0 && !isLoading && <span>You have no favorite movies</span>}
 			{movies && (
 				<ul className={isLoading ? 'loader' : 'grid__movies'}>
 					{isLoading && <i>📼</i>}
